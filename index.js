@@ -16,30 +16,30 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
 
   if (playerSelection == computerSelection) {
-    document.write("Estan empatados")
+    document.write("Estan empatados ")
   }
   else if (playerSelection == "Piedra") {
     if (computerSelection == "Papel") {
-      document.write("Has perdido")
+      document.write("Has perdido ")
     }
     if (computerSelection == "Tijera") {
-      document.write("Has GANADO!")
+      document.write("Has GANADO! ")
     }
   }
   else if (playerSelection == "Papel") {
     if (computerSelection == "Tijera") {
-      document.write("Has perdido")
+      document.write("Has perdido ")
     }
     if (computerSelection == "Piedra") {
-      document.write("Has GANADO!")
+      document.write("Has GANADO! ")
     }
   }
   else if (playerSelection == "Tijera") {
     if (computerSelection == "Piedra") {
-      document.write("Has perdido")
+      document.write("Has perdido ")
     }
     if (computerSelection == "Papel") {
-      document.write("Has GANADO!")
+      document.write("Has GANADO! ")
     }
   }
 }
@@ -60,3 +60,4 @@ function game() {
     document.write(ronda + "<br>")
   }
 }
+document.write(game())
