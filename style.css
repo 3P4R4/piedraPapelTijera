@@ -1,0 +1,25 @@
+
+  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+}
+.contenedor{
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+span{
+    color: rgb(0, 253, 84);
+    font-weight: bold;
+}
+.texto{
+    text-align: center;
+    margin-top: 10px;
+}
