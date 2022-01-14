@@ -3,8 +3,19 @@
 // Variables globales a usar
 let puntajeJugador = 0;
 let puntajeMaquina = 0;
-let playerSelection = "Tijera";
-let computerSelection = computerPlay();
+let playerSelection;
+
+// Creando una funcion para iniciar el prompt
+function emergente() {
+  playerSelection = prompt("¿Qué eliges?\nPiedra\nPapel\nTijera", "Piedra");;
+  let mensaje;
+  if (playerSelection == null || playerSelection == " ") {
+    mensaje = "Debes escribir algo o no podra jugar"
+  } else {
+    return game()
+  }
+  document.querySelector(".per").innerHTML = mensaje
+}
 
 
 function computerPlay() {
@@ -12,64 +23,86 @@ function computerPlay() {
   switch (opcionAzar) {
     case 0:
       return 'Piedra'
-    case 1:
-      return 'Papel'
+      case 1:
+        return 'Papel'
     case 2:
       return 'Tijera'
   }
 }
 
 function playRound(playerSelection, computerSelection) {
-
+  
   if (playerSelection == computerSelection) {
-    document.write("<p class='texto'>Estan empatados ambos han seleccionado <span>" + playerSelection + "</span></p>")
+    document.querySelector(".per").innerHTML = "Estan empatados ambos han seleccionado " + playerSelection
+
   }
   else if (playerSelection == "Piedra") {
     if (computerSelection == "Papel") {
-      document.write("<p class='texto'>Has perdido tu has selecionado <span>" + playerSelection + "</span> y la maquina ha seleccionado <span>" + computerSelection + "</span></p>")
-       puntajeMaquina++;
+      document.querySelector(".per").innerHTML = "Has PERDIDO! " + computerSelection + " gana a " + playerSelection;
+      document.querySelector(".per").innerHTML = "Has perdido" + puntajeMaquina + " "
+      puntajeMaquina++;
+
     }
     if (computerSelection == "Tijera") {
-      document.write("<p class='texto'>Has GANADO! tu has selecionado <span>" + playerSelection + "</span> y la maquina ha seleccionado <span>" + computerSelection + "</span></p>");
+      document.querySelector(".per").innerHTML = "Has GANADO! " + playerSelection + " gana a " + computerSelection
+      document.querySelector(".per").innerHTML = "Has ganado, tu puntaje es " + puntajeJugador + " "
       puntajeJugador++;
+
     }
   }
   else if (playerSelection == "Papel") {
     if (computerSelection == "Tijera") {
-      document.write("<p class='texto'>Has perdido tu has selecionado <span>" + playerSelection + "</span> y la maquina ha seleccionado <span>" + computerSelection + "</span></p>")
-       puntajeMaquina++;
+      document.querySelector(".per").innerHTML = "Has PERDIDO! " + computerSelection + " gana a " + playerSelection;
+      document.querySelector(".per").innerHTML = "Has perdido" + puntajeMaquina + " "
+      puntajeMaquina++;
+      
     }
     if (computerSelection == "Piedra") {
-      document.write("<p class='texto'>Has GANADO! tu has selecionado <span>" + playerSelection + "</span> y la maquina ha seleccionado <span>" + computerSelection + "</span></p>");
-       puntajeJugador++;
+      document.querySelector(".per").innerHTML = "Has GANADO! " + playerSelection + " gana a " + computerSelection;
+      document.querySelector(".per").innerHTML = "Has ganado, tu puntaje es " + puntajeJugador + " "
+      puntajeJugador++;
       
     }
   }
   else if (playerSelection == "Tijera") {
     if (computerSelection == "Piedra") {
-      document.write("<p class='texto'>Has perdido tu has selecionado <span>" + playerSelection + "</span> y la maquina ha seleccionado <span>" + computerSelection + "</span></p>")
-       puntajeMaquina++;
+      document.querySelector(".per").innerHTML = "Has PERDIDO! " + computerSelection + " gana a " + playerSelection;
+      document.querySelector(".per").innerHTML = "Has perdido" + puntajeMaquina + " "
+      puntajeMaquina++;
+
     }
     if (computerSelection == "Papel") {
-      document.write("<p class='texto'>Has GANADO! tu has selecionado <span>" + playerSelection + "</span> y la maquina ha seleccionado <span>" + computerSelection + "</span></p>");
-       puntajeJugador++;
+      document.querySelector(".per").innerHTML = "Has GANADO! " + playerSelection + " gana a " + computerSelection;
+      document.querySelector(".per").innerHTML = "Has ganado, tu puntaje es " + puntajeJugador + " "
+      puntajeJugador++;
       
     }
   }
+  let cajaPuntuacionPropia = document.getElementById("puntuacionPropia");
+  cajaPuntuacionPropia.textContent = ""
+  let cajaPuntuacionOrdenador = document.getElementById("puntuacionOrdenador");
+  cajaPuntuacionOrdenador.textContent = ""
+
+  let puntuacionPropia = document.createTextNode("Tu puntuación: " + puntajeJugador);
+  let puntuacionOrdenador = document.createTextNode("Puntuación ordenador: " + puntajeMaquina);
+
+
+
+  cajaPuntuacionPropia.appendChild(puntuacionPropia);
+  cajaPuntuacionOrdenador.appendChild(puntuacionOrdenador);
 }
 
 /* Escriba una NUEVA función llamada game(). Utilice la función anterior dentro de este para jugar un juego de 5 rondas que mantiene la puntuación e informa un ganador o perdedor al final. */
 
-function game(seleccion) {
-  let ronda = playRound(playerSelection, computerSelection) 
-  /* if (ronda.search("Tiempo")) {
-    document.write("<p class='texto'>Tu puntaje es <span>" + puntajeJugador + "</span></p>")
-     puntajeJugador++
-  } else if (roundResult.search("Has perdido tu has selecionado ")) {
-     puntajeMaquina++;
-  } */
+function game() {
+  let computerSelection = computerPlay();
+  let ronda = playRound(playerSelection, computerSelection)
+  console.log(ronda)
+
+  if (puntajeJugador >= 2 && puntajeMaquina < 2 ) {
+    console.log("el juego a terminado player")
+  }else if (puntajeMaquina > 2 && puntajeJugador < 2) {
+    console.log("el juego a terminado computer")
+  }
 }
 
-document.write(playRound(playerSelection, computerSelection))
-document.write("<br> Tu puntaje ahora es "+puntajeJugador+" <br> ")
-document.write("El puntaje de la Maquina es "+puntajeMaquina+" ")
