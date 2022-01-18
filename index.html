@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,31 @@
     <title>Piedra, Papel, Tijera</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div class="contenedor">
-        <h1>El resultado es:</h1>
+        <h1>Bienvenido al juego de Piedra, Papel y Tijera</h1>
         <button onclick="emergente()">clic</button>
         <p class="per"></p>
+        <div>
+            <h1 id="puntuacionPropia">Tu puntuación: 0</h1>
+            <h1 id="puntuacionOrdenador">Puntuación ordenador: 0</h1>
+            <a href="#" class="btn">Modal</a>
+        </div>
     </div>
 
-    <div>
-        <h1 id="puntuacionPropia">Tu puntuación: 0</h1>
-        <h1 id="puntuacionOrdenador">Puntuación ordenador: 0</h1>
+
+    <!-- Creando el modal -->
+
+    <div class="modal-container">
+        <div class="modal close-modal">
+            <p class="cerrar">X</p>
+            <h2>Lo has logrado!</h2>
+            <img src="/dedo.jpg" alt="">
+        </div>
     </div>
+    
+    <!-- fin modal -->
     <script src="index.js"></script>
 </body>
 </html>

@@ -23,15 +23,15 @@ function computerPlay() {
   switch (opcionAzar) {
     case 0:
       return 'Piedra'
-      case 1:
-        return 'Papel'
+    case 1:
+      return 'Papel'
     case 2:
       return 'Tijera'
   }
 }
 
 function playRound(playerSelection, computerSelection) {
-  
+
   if (playerSelection == computerSelection) {
     document.querySelector(".per").innerHTML = "Estan empatados ambos han seleccionado " + playerSelection
 
@@ -55,13 +55,13 @@ function playRound(playerSelection, computerSelection) {
       document.querySelector(".per").innerHTML = "Has PERDIDO! " + computerSelection + " gana a " + playerSelection;
       document.querySelector(".per").innerHTML = "Has perdido" + puntajeMaquina + " "
       puntajeMaquina++;
-      
+
     }
     if (computerSelection == "Piedra") {
       document.querySelector(".per").innerHTML = "Has GANADO! " + playerSelection + " gana a " + computerSelection;
       document.querySelector(".per").innerHTML = "Has ganado, tu puntaje es " + puntajeJugador + " "
       puntajeJugador++;
-      
+
     }
   }
   else if (playerSelection == "Tijera") {
@@ -75,7 +75,7 @@ function playRound(playerSelection, computerSelection) {
       document.querySelector(".per").innerHTML = "Has GANADO! " + playerSelection + " gana a " + computerSelection;
       document.querySelector(".per").innerHTML = "Has ganado, tu puntaje es " + puntajeJugador + " "
       puntajeJugador++;
-      
+
     }
   }
   let cajaPuntuacionPropia = document.getElementById("puntuacionPropia");
@@ -99,10 +99,50 @@ function game() {
   let ronda = playRound(playerSelection, computerSelection)
   console.log(ronda)
 
-  if (puntajeJugador >= 2 && puntajeMaquina < 2 ) {
+  if (puntajeJugador >= 2 && puntajeMaquina < 2) {
     console.log("el juego a terminado player")
-  }else if (puntajeMaquina > 2 && puntajeJugador < 2) {
+    return gen()
+  } else if (puntajeMaquina >= 2 && puntajeJugador < 2) {
     console.log("el juego a terminado computer")
+    return gen()
   }
 }
+
+/** Modal **/
+
+function gen() {
+  let abrir = document.querySelectorAll(".btn")[0]
+  let cerrar = document.querySelectorAll(".cerrar")[0]
+  let modal = document.querySelectorAll(".modal")[0]
+  let modalCont = document.querySelectorAll(".modal-container")[0]
+
+
+  modalCont.style.visibility = "visible"
+  modal.classList.toggle("close-modal")
+
+
+  cerrar.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.classList.toggle("close-modal")
+    setTimeout(function () {
+      modalCont.style.visibility = "hidden"
+    }, 1000)
+  })
+
+  window.addEventListener("click", function (e) {
+    e.target
+    if (e.target === modalCont) {
+      modal.classList.toggle("close-modal")
+      setTimeout(function () {
+        modalCont.style.visibility = "hidden"
+      }, 1000)
+    }
+  })
+}
+
+
+
+
+
+
 
