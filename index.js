@@ -7,6 +7,7 @@ let playerSelection;
 
 // Creando una funcion para iniciar el prompt
 function emergente() {
+  return saw()
   playerSelection = prompt("¿Qué eliges?\nPiedra\nPapel\nTijera", "Piedra");;
   let mensaje;
   if (playerSelection == null || playerSelection == " ") {
@@ -111,7 +112,6 @@ function game() {
 /** Modal **/
 
 function gen() {
-  let abrir = document.querySelectorAll(".btn")[0]
   let cerrar = document.querySelectorAll(".cerrar")[0]
   let modal = document.querySelectorAll(".modal")[0]
   let modalCont = document.querySelectorAll(".modal-container")[0]
@@ -139,6 +139,26 @@ function gen() {
     }
   })
 }
+/* FIn modal */
+
+/** Modal SAW **/
+
+function saw() {
+  let modal = document.querySelectorAll(".modal-saw")[0]
+  let modalCont = document.querySelectorAll(".modal-container-saw")[0]
+
+  modalCont.style.visibility = "visible"
+  modal.classList.toggle("close-modal-saw")
+  setTimeout(() => {
+    modal.style.transition= "transform 1s";
+    modal.style.transform = "translateY(-300%)";
+    setTimeout(() => {
+      modalCont.style.visibility = "hidden"
+    }, 500);
+  }, 3000);
+
+}
+/* FIn modal */
 
 
 

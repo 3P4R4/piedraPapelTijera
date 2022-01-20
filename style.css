@@ -13,6 +13,7 @@ body{
 .contenedor{
     height: 100vh;
     width: auto;
+    text-align: center;
 }
 h1{
     text-align: center;
@@ -92,3 +93,50 @@ span{
     background-color: rgb(88, 231, 119);
     font-weight: 700;
 }
+/* fin modal*/
+
+  /** Modal SAW **/
+
+.modal-container-saw{
+  visibility: hidden;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background-color: rgba(146, 144, 144, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-saw{
+  width: 50%;
+  height: auto;
+  background-color: #FCF6E6;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 40px;
+  position: relative;
+  transition: transform 1s;
+  transform: translateY(0%);
+}
+.close-modal-saw{
+  transform: translateY(-300%);
+}
+.modal> img {
+  width: 50%;
+  height: auto;
+}
+.cerrar-saw{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  padding-top: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgb(88, 231, 119);
+  font-weight: 700;
+}
+/* fin modal*/
