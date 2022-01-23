@@ -8,12 +8,55 @@
     
 }
 body{
-    background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+    background: #FEF201
 }
 .contenedor{
     height: 100vh;
     width: auto;
     text-align: center;
+}
+.botones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botones-mostrar{
+  visibility: hidden ;
+}
+.botones-puntaje{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.botones-mostrar-puntaje{
+  visibility: hidden ;
+}
+
+.botones > button{
+  border:none
+}
+.btn-emergente{
+  background-color: tomato;
+  color: #fff;
+  padding: 2px 8px 2px 8px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+button{
+  background-color:#FEF201
+}
+.botones > button > img{
+  width: 250px;
+  height: auto;
+  padding: 0 20px 0 20px;
+  background: #FEF201;
+  
+}
+
+#usuario{
+  font-size: 4rem;
 }
 h1{
     text-align: center;

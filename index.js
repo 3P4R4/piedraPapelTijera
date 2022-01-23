@@ -5,17 +5,23 @@ let puntajeJugador = 0;
 let puntajeMaquina = 0;
 let playerSelection;
 
+
+
 // Creando una funcion para iniciar el prompt
 function emergente() {
-  return saw()
-  playerSelection = prompt("¿Qué eliges?\nPiedra\nPapel\nTijera", "Piedra");;
-  let mensaje;
-  if (playerSelection == null || playerSelection == " ") {
-    mensaje = "Debes escribir algo o no podra jugar"
-  } else {
-    return game()
+  var mensaje;
+  var opcion = prompt("Introduzca su nombre por favor:", "Abraham José Mendoza");
+
+  if (opcion == null || opcion == "") {
+    mensaje = "Debes escribir un Nombre para identificarte";
+    alert(mensaje)
+    location.reload();
+  } 
+  else {
+    mensaje = opcion;
+    document.getElementById("usuario").innerHTML = mensaje;
+    return ocultar()
   }
-  document.querySelector(".per").innerHTML = mensaje
 }
 
 
@@ -26,13 +32,13 @@ function computerPlay() {
       return 'Piedra'
     case 1:
       return 'Papel'
-    case 2:
+      case 2:
       return 'Tijera'
-  }
+    }
 }
 
 function playRound(playerSelection, computerSelection) {
-
+  
   if (playerSelection == computerSelection) {
     document.querySelector(".per").innerHTML = "Estan empatados ambos han seleccionado " + playerSelection
 
@@ -48,7 +54,7 @@ function playRound(playerSelection, computerSelection) {
       document.querySelector(".per").innerHTML = "Has GANADO! " + playerSelection + " gana a " + computerSelection
       document.querySelector(".per").innerHTML = "Has ganado, tu puntaje es " + puntajeJugador + " "
       puntajeJugador++;
-
+      
     }
   }
   else if (playerSelection == "Papel") {
@@ -86,9 +92,9 @@ function playRound(playerSelection, computerSelection) {
 
   let puntuacionPropia = document.createTextNode("Tu puntuación: " + puntajeJugador);
   let puntuacionOrdenador = document.createTextNode("Puntuación ordenador: " + puntajeMaquina);
+  
 
-
-
+  
   cajaPuntuacionPropia.appendChild(puntuacionPropia);
   cajaPuntuacionOrdenador.appendChild(puntuacionOrdenador);
 }
@@ -99,7 +105,7 @@ function game() {
   let computerSelection = computerPlay();
   let ronda = playRound(playerSelection, computerSelection)
   console.log(ronda)
-
+  
   if (puntajeJugador >= 2 && puntajeMaquina < 2) {
     console.log("el juego a terminado player")
     return gen()
@@ -115,7 +121,7 @@ function gen() {
   let cerrar = document.querySelectorAll(".cerrar")[0]
   let modal = document.querySelectorAll(".modal")[0]
   let modalCont = document.querySelectorAll(".modal-container")[0]
-
+  
 
   modalCont.style.visibility = "visible"
   modal.classList.toggle("close-modal")
@@ -150,19 +156,58 @@ function saw() {
   modalCont.style.visibility = "visible"
   modal.classList.toggle("close-modal-saw")
   setTimeout(() => {
-    modal.style.transition= "transform 1s";
+    modal.style.transition = "transform 1s";
     modal.style.transform = "translateY(-300%)";
     setTimeout(() => {
       modalCont.style.visibility = "hidden"
     }, 500);
-  }, 3000);
+  }, 4500);
 
 }
 /* FIn modal */
 
+/* Ocultar bloque */
+/*
+Contenedor con la clase ocultar para luego dejar visualizar los elementor de 
+"Piedra, Papel y Tijera"
+ */
+function ocultar() {
+  let ocultar = document.querySelectorAll(".ocultar")[0]
+  let mostrar = document.querySelectorAll(".botones-mostrar")[0]
+  let puntaje = document.querySelectorAll(".botones-mostrar-puntaje")[0]
 
+  /* mostrar.addEventListener("click", function(e) {
+    e.preventDefault();
 
+  }) */
+  
+  ocultar.style.display = "none";
 
+  mostrar.style.visibility= "visible"
+  puntaje.style.visibility= "visible"
+
+  saw()
+  setTimeout(() => {
+    sonido.play()
+  }, 2500);
+
+}
+/* FIn ocultar */
+
+/* Efecto de sonido */
+const cargarSonido = function (fuente) {
+  const sonido = document.createElement("audio");
+  sonido.src = fuente;
+  sonido.setAttribute("preload", "auto");
+  sonido.setAttribute("controls", "none");
+  sonido.style.display = "none"; // <-- oculto
+  document.body.appendChild(sonido);
+  return sonido;
+};
+
+const sonido = cargarSonido("/audio/queComienceElJuego2.mp3");
+
+/* Fin efecto de sonido */
 
 
 
