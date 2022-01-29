@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra, Papel, Tijera</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="#">
 </head>
 
 <body>
@@ -15,6 +16,7 @@
         <br>
         <h2 id="usuario"></h2>
         <br>
+        <h3 class="per"></h3>
         <div class="ocultar">
             <h2>al juego de Piedra, Papel y Tijera</h2>
             <br>
@@ -23,13 +25,13 @@
             <button class="btn-emergente" onclick="emergente()">Que comience el juego</button>
         </div>
         <div class="botones botones-mostrar">
-            <button id="piedra">
+            <button class="imagenes btn-piedra" id="piedra">
                 <img src="/img/piedra.jpg" alt="piedra">
             </button>
-            <button id="papel">
+            <button class="imagenes btn-papel" id="papel">
                 <img src="/img/papel.jpg" alt="papel">
             </button>
-            <button id="tijera">
+            <button class="imagenes btn-tijera" id="tijera">
                 <img src="/img/tijera.jpg" alt="tijera">
             </button>
         </div>
@@ -40,13 +42,31 @@
     </div>
 
 
-    <!-- Creando el modal -->
+    <!-- Creando el modal hazGanado-->
 
     <div class="modal-container">
         <div class="modal close-modal">
             <p class="cerrar">X</p>
-            <h2>Lo has logrado!</h2>
+            <h2>Lo haz logrado!</h2>
             <img src="/img/dedo.jpg" alt="burla">
+            <div id="recargar">
+                <button onclick="location.reload()">reacargar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- fin modal -->
+
+    <!-- Creando el modal hazPerdido-->
+
+    <div class="modal-container-hazPerdido">
+        <div class="modal-hazPerdido close-modal-hazPerdido">
+            <p class="cerrar-hazPerdido">X</p>
+            <h2>Haz perdido!!!</h2>
+            <img src="/img/kiko.jpg" alt="burla">
+            <div id="recargar">
+                <button onclick="location.reload()">reacargar</button>
+            </div>
         </div>
     </div>
     
