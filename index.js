@@ -174,8 +174,8 @@ function playRound(playerSelection, computerSelection) {
   let cajaPuntuacionOrdenador = document.getElementById("puntuacionOrdenador");
   cajaPuntuacionOrdenador.textContent = ""
   
-  let puntuacionPropia = document.createTextNode("Tu puntuación: " + puntajeJugador);
-  let puntuacionOrdenador = document.createTextNode("Puntuación ordenador: " + puntajeMaquina);
+  let puntuacionPropia = document.createTextNode("Tú: " + puntajeJugador);
+  let puntuacionOrdenador = document.createTextNode("La IA: " + puntajeMaquina);
 
 
 
@@ -266,6 +266,5 @@ const cargarSonido = function (fuente) {
 const sonido = cargarSonido("/audio/queComienceElJuego2.mp3");
 
 /* Fin efecto de sonido */
-
 
 

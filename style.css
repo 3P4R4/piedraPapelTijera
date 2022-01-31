@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background: #FEF201;
+}
 .contenido{
   background: #FEF201;
   text-align: center; 
@@ -27,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  padding: 0 20px;  
 }
 
 .botones-mostrar-puntaje{
@@ -51,7 +54,7 @@ button{
 }
 h1{
   text-align: center;
-  padding-top: 50px;
+  padding-top: 20px;
   }
 
   span{
@@ -82,7 +85,7 @@ h1{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 100PX 30px 0 30PX;
+    padding: 50PX 30px 0 30PX;
   }
 
   #footer > img{
@@ -124,12 +127,10 @@ h1{
   align-items: center;
 }
 .modal, .modal-hazPerdido{
-  width: 50%;
   height: auto;
   background-color: #FCF6E6;
   overflow: hidden;
   text-align: center;
-  padding-top: 40px;
   position: relative;
   transition: transform 1s;
   transform: translateY(0%);
@@ -137,9 +138,11 @@ h1{
 .close-modal, .close-modal-hazPerdido{
   transform: translateY(-300%);
 }
-.modal> img, .modal-hazPerdido> img  {
-  width: 50%;
-  height: auto;
+.modal> img{
+  object-fit: cover;
+}
+.modal-hazPerdido> img  {
+  object-fit: contain;
 }
 .cerrar, .cerrar-hazPerdido{
   position: absolute;
@@ -170,23 +173,18 @@ h1{
     align-items: center;
   }
   .modal-saw{
-    width: 50%;
-    height: auto;
     background-color: #FCF6E6;
     overflow: hidden;
     text-align: center;
-    padding-top: 40px;
     position: relative;
     transition: transform 1s;
     transform: translateY(0%);
+    border-radius: 200px;
   }
   .close-modal-saw{
     transform: translateY(-300%);
   }
-  .modal> img {
-    width: 50%;
-    height: auto;
-  }
+ 
   .cerrar-saw{
     position: absolute;
     top: 5px;
