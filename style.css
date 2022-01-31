@@ -1,42 +1,39 @@
-
-  
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background: #FEF201
-}
-.contenedor{
-    height: 100vh;
-    width: auto;
-    text-align: center;
+.contenido{
+  background: #FEF201;
+  text-align: center; 
+  width: auto;
+  height: 100vh;  
 }
 .botones{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  padding: 30px 30px;
+}
+.botones > button > img{
+  width: 100%;
 }
 
 .botones-mostrar{
-  visibility: hidden ;
+  visibility: hidden;
+  margin-top: -150px;
 }
+
 .botones-puntaje{
   display: flex;
   justify-content: space-between;
   align-items: center;
   
 }
+
 .botones-mostrar-puntaje{
   visibility: hidden ;
 }
 
-.botones > button{
-  border:none
-}
 .btn-emergente{
   background-color: tomato;
   color: #fff;
@@ -44,103 +41,77 @@ body{
   border-radius: 5px;
   font-size: 20px;
 }
+
 button{
   background-color:#FEF201
-}
-.botones > button > img{
-  width: 250px;
-  height: auto;
-  padding: 0 20px 0 20px;
-  background: #FEF201;
-  
 }
 
 #usuario{
   font-size: 4rem;
 }
 h1{
-    text-align: center;
-    margin-top: 50px;
-}
-.contenedor{
-    margin: 0 auto;
-    max-width: 600px;
-}
+  text-align: center;
+  padding-top: 50px;
+  }
 
-span{
+  span{
     color: rgb(0, 253, 84);
     font-weight: bold;
-}
+  }
 .texto{
-    text-align: center;
+  text-align: center;
     margin-top: 10px;
-}
-
-* {
-    box-sizing: border-box;
   }
   
-  /** Modal hazGanado y hazPerdido**/
-
-  .btn{
-      display: inline-block;
-      padding: 7px 0px;
-      border-radius: 50px;
-      width: 100px;
-      border: 1px solid #fff;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 700;
+  #spn{
+    color: red;
+    text-transform: uppercase;
+  }
+  
+  #recargar > button {
+    color: #000000;
+    border-radius: 7px;
+    padding: 5px 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: sans-serif ;
   }
 
-.modal-container, .modal-container-hazPerdido{
-    visibility: hidden;
-    position: fixed;
-    z-index: 100;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    background-color: rgba(146, 144, 144, 0.8);
+  #footer{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-}
-.modal, .modal-hazPerdido{
-    width: 50%;
+    padding: 100PX 30px 0 30PX;
+  }
+
+  #footer > img{
+    border-radius: 250px;
+    object-fit: contain;
+    max-width: 50px;
     height: auto;
-    background-color: #FCF6E6;
-    overflow: hidden;
+  }
+  #derechos{
+    font-size: 12px;
+    color: tomato;
+    font-weight: bold;
+  }
+
+  /** Modal hazGanado y hazPerdido**/
+  
+  .btn{
+    display: inline-block;
+    padding: 7px 0px;
+    border-radius: 50px;
+    width: 100px;
+    border: 1px solid #fff;
     text-align: center;
-    padding-top: 40px;
-    position: relative;
-    transition: transform 1s;
-    transform: translateY(0%);
-}
-.close-modal, .close-modal-hazPerdido{
-    transform: translateY(-300%);
-}
-.modal> img, .modal-hazPerdido> img  {
-    width: 50%;
-    height: auto;
-}
-.cerrar, .cerrar-hazPerdido{
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 25px;
-    height: 25px;
-    padding-top: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: rgb(88, 231, 119);
+    text-decoration: none;
+    color: #fff;
     font-weight: 700;
 }
-/* fin modal*/
 
-  /** Modal SAW **/
-
-.modal-container-saw{
+.modal-container, .modal-container-hazPerdido{
   visibility: hidden;
   position: fixed;
   z-index: 100;
@@ -152,7 +123,7 @@ span{
   justify-content: center;
   align-items: center;
 }
-.modal-saw{
+.modal, .modal-hazPerdido{
   width: 50%;
   height: auto;
   background-color: #FCF6E6;
@@ -163,14 +134,14 @@ span{
   transition: transform 1s;
   transform: translateY(0%);
 }
-.close-modal-saw{
+.close-modal, .close-modal-hazPerdido{
   transform: translateY(-300%);
 }
-.modal> img {
+.modal> img, .modal-hazPerdido> img  {
   width: 50%;
   height: auto;
 }
-.cerrar-saw{
+.cerrar, .cerrar-hazPerdido{
   position: absolute;
   top: 5px;
   right: 5px;
@@ -184,16 +155,48 @@ span{
 }
 /* fin modal*/
 
-#spn{
-  color: red;
-  text-transform: uppercase;
-}
+  /** Modal SAW **/
 
-#recargar > button {
-  color: #000000;
-  border-radius: 7px;
-  padding: 5px 10px;
-  font-size: 20px;
-  text-transform: uppercase;
-  font-family: Montserrat ;
-}
+  .modal-container-saw{
+    visibility: hidden;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(146, 144, 144, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-saw{
+    width: 50%;
+    height: auto;
+    background-color: #FCF6E6;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 40px;
+    position: relative;
+    transition: transform 1s;
+    transform: translateY(0%);
+  }
+  .close-modal-saw{
+    transform: translateY(-300%);
+  }
+  .modal> img {
+    width: 50%;
+    height: auto;
+  }
+  .cerrar-saw{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    padding-top: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(88, 231, 119);
+    font-weight: 700; 
+  }
+  /* fin modal*/

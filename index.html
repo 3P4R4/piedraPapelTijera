@@ -12,49 +12,60 @@
 
 <body>
     <div class="contenedor">
-        <h1>Bienvenido</h1>
-        <br>
-        <h2 id="usuario"></h2>
-        <br>
-        <h3 class="per"></h3>
-        <div class="ocultar">
-            <h2>al juego de Piedra, Papel y Tijera</h2>
-            <br>
-            <h4>Para comenzar a Jugar dale click al botón <strong>comenzar</strong></h4>
-            <br>
-            <button class="btn-emergente" onclick="emergente()">Que comience el juego</button>
+        <div class="contenido">
+            <div class="principal">
+                <h1>Bienvenido</h1>
+                <h2>al juego de Piedra, Papel y Tijera</h2>
+                <br>
+                <h2 id="usuario"></h2>
+                <br>
+                <h3 class="per"></h3>
+            </div>
+            <div class="botones botones-mostrar">
+                <button class="imagenes btn-piedra" id="piedra">
+                    <img src="./img/piedra.jpg" alt="piedra">
+                </button>
+                <button class="imagenes btn-papel" id="papel">
+                    <img src="./img/papel.jpg" alt="papel">
+                </button>
+                <button class="imagenes btn-tijera" id="tijera">
+                    <img src="./img/tijera.jpg" alt="tijera">
+                </button>
+            </div>
+            <div class="ocultar">
+                <br>
+                <h4>Para comenzar a Jugar dale click al botón <strong>comenzar</strong></h4>
+                <br>
+                <button class="btn-emergente" onclick="emergente()">Que comience el juego</button>
+            </div>
+            <div class="botones-puntaje botones-mostrar-puntaje">
+                <h1 id="puntuacionPropia">Tu puntuación</h1>
+                <h1 id="puntuacionOrdenador">Puntuación ordenador</h1>
+            </div>
+            <footer id="footer">
+                <img src="./img/Abraham_330a.jpg" alt="foto perfil">
+                <div>
+                    <p>con mucho cariño &#128150; para mi sobrino Abraham Mendoza.</p>
+                    <p>FUTURO PROGRAMADOR DE VIDEOS JUEGOS</p>
+                    <p id="derechos">Derechos reservados Enero 2022</p>
+                </div>
+            </footer>
         </div>
-        <div class="botones botones-mostrar">
-            <button class="imagenes btn-piedra" id="piedra">
-                <img src="./img/piedra.jpg" alt="piedra">
-            </button>
-            <button class="imagenes btn-papel" id="papel">
-                <img src="./img/papel.jpg" alt="papel">
-            </button>
-            <button class="imagenes btn-tijera" id="tijera">
-                <img src="./img/tijera.jpg" alt="tijera">
-            </button>
-        </div>
-        <div class="botones-puntaje botones-mostrar-puntaje">
-            <h1 id="puntuacionPropia">Tu puntuación</h1>
-            <h1 id="puntuacionOrdenador">Puntuación ordenador</h1>
-        </div>
-    </div>
-
-
+            
     <!-- Creando el modal hazGanado-->
 
     <div class="modal-container">
         <div class="modal close-modal">
             <p class="cerrar">X</p>
             <h2>Lo haz logrado!</h2>
-            <img src="./img/dedo.jpg" alt="burla">
+            <img src="./img/dedo_330a.jpg" alt="burla">
             <div id="recargar">
                 <button onclick="location.reload()">reacargar</button>
             </div>
         </div>
     </div>
-    
+
+
     <!-- fin modal -->
 
     <!-- Creando el modal hazPerdido-->
@@ -63,24 +74,27 @@
         <div class="modal-hazPerdido close-modal-hazPerdido">
             <p class="cerrar-hazPerdido">X</p>
             <h2>Haz perdido!!!</h2>
-            <img src="./img/kiko.jpg" alt="burla">
+            <img src="./img/kiko_330a.jpg" alt="burla">
             <div id="recargar">
                 <button onclick="location.reload()">reacargar</button>
             </div>
         </div>
     </div>
-    
+
     <!-- fin modal -->
 
     <!-- SAW Modal -->
 
     <div class="modal-container-saw">
         <div class="modal-saw close-modal-saw">
-            <img src="./img/saw.gif" alt="gif-saw">
+            <img src="./img/saw_330a.gif" alt="gif-saw">
         </div>
     </div>
+    <!-- fin modal -->        
+    </div>
     
-    <!-- fin modal -->
     <script src="index.js"></script>
+
 </body>
+
 </html>

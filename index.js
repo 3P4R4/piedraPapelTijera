@@ -40,7 +40,8 @@ function ocultar() {
   }) */
 
   ocultar.style.display = "none";
-  mostrar.style.visibility = "visible"
+  mostrar.style.visibility = "visible";
+  mostrar.style.marginTop = "0px";
   puntaje.style.visibility = "visible"
 
   saw()
