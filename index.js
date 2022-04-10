@@ -263,7 +263,7 @@ const cargarSonido = function (fuente) {
   return sonido;
 };
 
-const sonido = cargarSonido("/audio/queComienceElJuego2.mp3");
+const sonido = cargarSonido("audio/queComienceElJuego2.mp3");
 
 /* Fin efecto de sonido */
 
